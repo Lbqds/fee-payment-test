@@ -1,0 +1,89 @@
+{
+  "version": "v2.12.0",
+  "name": "FeePaymentTest",
+  "bytecode": "0303404a4074408500030206014025a0000d2a17021601b1160213036413006417041703b213c40de0b6b3a7640000a2160240ce00160316040d1600c91705a0010d2aa1011602a100051600a0005f160502010101030011b51341917bb417010002170216011602a9b213c40de0b6b3a7640000a21601160000001801000000010213c43782dace9d90000002",
+  "codeHash": "c9db28b6d69ceaeef710c532e170f4222788355e99666e0a280f2834c0f6cd61",
+  "fieldsSig": {
+    "names": [
+      "latestIndex",
+      "totalSupply",
+      "certificateTemplateId"
+    ],
+    "types": [
+      "U256",
+      "U256",
+      "ByteVec"
+    ],
+    "isMutable": [
+      true,
+      true,
+      false
+    ]
+  },
+  "eventsSig": [
+    {
+      "name": "IssuedCertificate",
+      "fieldNames": [
+        "requestor",
+        "index"
+      ],
+      "fieldTypes": [
+        "Address",
+        "U256"
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "mintCertificate",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": false,
+      "paramNames": [
+        "certifiedAddress",
+        "args"
+      ],
+      "paramTypes": [
+        "Address",
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false,
+        false
+      ],
+      "returnTypes": [
+        "ByteVec"
+      ]
+    },
+    {
+      "name": "requestCertificate",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": true,
+      "isPublic": true,
+      "paramNames": [
+        "args"
+      ],
+      "paramTypes": [
+        "ByteVec"
+      ],
+      "paramIsMutable": [
+        false
+      ],
+      "returnTypes": []
+    },
+    {
+      "name": "getFee",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": [
+        "U256"
+      ]
+    }
+  ],
+  "constants": [],
+  "enums": []
+}

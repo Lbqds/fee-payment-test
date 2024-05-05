@@ -1,0 +1,38 @@
+{
+  "version": "v2.12.0",
+  "name": "Certificate",
+  "bytecode": "030106010000000000",
+  "codeHash": "a5a8d094d41428569352570a2052e85003d6330b00bd617267bdd3028b296157",
+  "fieldsSig": {
+    "names": [
+      "args",
+      "parentId",
+      "index"
+    ],
+    "types": [
+      "ByteVec",
+      "ByteVec",
+      "U256"
+    ],
+    "isMutable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "eventsSig": [],
+  "functions": [
+    {
+      "name": "func",
+      "usePreapprovedAssets": false,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ],
+  "constants": [],
+  "enums": []
+}

@@ -1,0 +1,31 @@
+{
+  "version": "v2.12.0",
+  "name": "RequestCertificate",
+  "bytecodeTemplate": "0101030000000bb40c0d{0}0102a2{1}0d0c{0}0101",
+  "fieldsSig": {
+    "names": [
+      "contract",
+      "args"
+    ],
+    "types": [
+      "FeePaymentTest",
+      "ByteVec"
+    ],
+    "isMutable": [
+      false,
+      false
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "usePreapprovedAssets": true,
+      "useAssetsInContract": false,
+      "isPublic": true,
+      "paramNames": [],
+      "paramTypes": [],
+      "paramIsMutable": [],
+      "returnTypes": []
+    }
+  ]
+}

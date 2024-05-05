@@ -1,0 +1,41 @@
+{
+  "fullNodeVersion": "v2.12.0",
+  "compilerOptionsUsed": {
+    "ignoreUnusedConstantsWarnings": false,
+    "ignoreUnusedVariablesWarnings": false,
+    "ignoreUnusedFieldsWarnings": false,
+    "ignoreUnusedPrivateFunctionsWarnings": false,
+    "ignoreUpdateFieldsCheckWarnings": false,
+    "ignoreCheckExternalCallerWarnings": false
+  },
+  "infos": {
+    "Certificate": {
+      "sourceFile": "fee-payment-test.ral",
+      "sourceCodeHash": "277458abdc54887eff5d1c31ce8527318f19ed3763f9a2f3902b2ded2e8db9c7",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "a5a8d094d41428569352570a2052e85003d6330b00bd617267bdd3028b296157",
+      "warnings": []
+    },
+    "FeePaymentTest": {
+      "sourceFile": "fee-payment-test.ral",
+      "sourceCodeHash": "277458abdc54887eff5d1c31ce8527318f19ed3763f9a2f3902b2ded2e8db9c7",
+      "bytecodeDebugPatch": "=6-2+6d=2+9=1-1=2+a=1-1=13-1+8=42+160216007e03154d696e74696e6720636572746966696361746520230520666f722000=210",
+      "codeHashDebug": "66238a6cb34cc999bf1e5a109693dd225d28188ca479f805bccb3dea3b45521b",
+      "warnings": []
+    },
+    "Parent": {
+      "sourceFile": "fee-payment-test.ral",
+      "sourceCodeHash": "277458abdc54887eff5d1c31ce8527318f19ed3763f9a2f3902b2ded2e8db9c7",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "RequestCertificate": {
+      "sourceFile": "fee-payment-test.ral",
+      "sourceCodeHash": "277458abdc54887eff5d1c31ce8527318f19ed3763f9a2f3902b2ded2e8db9c7",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    }
+  }
+}

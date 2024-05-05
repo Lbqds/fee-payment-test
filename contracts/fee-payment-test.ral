@@ -1,0 +1,57 @@
+Abstract Contract Parent(
+  mut latestIndex: U256,
+  mut totalSupply: U256,
+  certificateTemplateId: ByteVec
+) {
+  event IssuedCertificate(requestor: Address, index: U256)
+
+  @using(preapprovedAssets = true, updateFields = true)
+  fn mintCertificate(certifiedAddress: Address, args: ByteVec) -> ByteVec {
+    let certifIndex = latestIndex + 1
+    let (encodeImmutableFields, encodeMutableFields) = Certificate.encodeFields!(
+      args,
+      selfContractId!(),
+      certifIndex
+    )
+    emit Debug(`Minting certificate #${certifIndex} for ${certifiedAddress}`)
+    let certifId = copyCreateSubContractWithToken!{selfAddress!() -> ALPH: 1 alph}(
+      toByteVec!(certifIndex),
+      certificateTemplateId,
+      encodeImmutableFields,
+      encodeMutableFields,
+      1,
+      certifiedAddress
+    )
+    totalSupply = totalSupply + 1
+    latestIndex = certifIndex
+    emit IssuedCertificate(certifiedAddress, latestIndex)
+    return certifId
+  }
+}
+
+Contract FeePaymentTest(
+  mut latestIndex: U256,
+  mut totalSupply: U256,
+  certificateTemplateId: ByteVec
+) extends Parent(latestIndex, totalSupply, certificateTemplateId) {
+  @using(preapprovedAssets = true, assetsInContract = true)
+  pub fn requestCertificate(args: ByteVec) -> () {
+    checkCaller!(isCalledFromTxScript!(), 401)
+    let requestor = callerAddress!()
+    let fee = getFee()
+    transferTokenToSelf!(requestor, ALPH, fee)
+    let _ = mintCertificate{selfAddress!() -> ALPH: 1 alph}(requestor, args)
+  }
+
+  pub fn getFee() -> U256 {
+    return 4 alph
+  }
+}
+
+TxScript RequestCertificate(contract: FeePaymentTest, args: ByteVec) {
+  contract.requestCertificate{callerAddress!() -> ALPH: contract.getFee()}(args)
+}
+
+Contract Certificate(@unused args: ByteVec, @unused parentId: ByteVec, @unused index: U256) {
+  pub fn func() -> () {}
+}
